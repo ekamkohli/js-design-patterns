@@ -5,7 +5,9 @@ module.exports = {
     // The method to publish an update
     if (!subscribers[event]) return;
 
-    subcribers[event].forEach((subscriberCallback) => subscriberCallback(data));
+    subscribers[event].forEach((subscriberCallback) =>
+      subscriberCallback(data)
+    );
   },
   subscribe(event, callback) {
     // The method to subscribe to an update
